@@ -5,9 +5,6 @@
 using namespace std;
 
 #define showtime printf("time = %.15f\n", clock() / (double)CLOCKS_PER_SEC);
-#define root 1, n, 1
-
-#define showtime printf("time = %.15f\n", clock() / (double)CLOCKS_PER_SEC);
 #define lson l, m, rt  <<  1
 #define rson m + 1, r, rt  <<  1 | 1
 #define root 1, n, 1
