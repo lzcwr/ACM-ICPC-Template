@@ -280,17 +280,16 @@ void solve()
 int main()
 {
 #ifndef ONLINE_JUDGE
-    // freopen("in.txt", "r", stdin);
-    // freopen("out.txt", "w", stdout);
+    freopen("in.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
 #endif
 
     solve();
 
 #ifndef ONLINE_JUDGE
-    // fclose(stdin);
-    // fclose(stdout);
-    system("bianma.txt");
-    system("jiema.txt");
+    fclose(stdin);
+    fclose(stdout);
+    system("out.txt");
 #endif
 
     return 0;
