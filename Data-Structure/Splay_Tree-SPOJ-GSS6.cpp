@@ -5,9 +5,10 @@
 using namespace std;
 
 #define showtime printf("time = %.15f\n", clock() / (double)CLOCKS_PER_SEC);
-#define lson l, m, rt << 1
-#define rson m + 1, r, rt << 1 | 1
-#define root 1, n, 1
+// #define lson l, m, rt << 1
+// #define rson m + 1, r, rt << 1 | 1
+// #define root 1, n, 1
+#define Key_value ch[ch[root][1]][0]
 
 const int maxn = 50010;
 const int mod = 1e9 + 7;
@@ -178,10 +179,8 @@ class Splay
 
 Splay sp;
 
-int main()
+void solve()
 {
-    // showtime
-    char c;
     int n, m, x, y;
     sp.init();
     scanf("%d", &n);
@@ -196,23 +195,24 @@ int main()
     scanf("%d", &m);
     for(int i = 1; i <= m ; i++)
     {
-        scanf(" %c", &c);
-        if(c == 'I')
+        char op[20];
+        scanf("%s", op);
+        if(op[0] == 'I')
         {
             scanf("%d %d", &x, &y);
             sp.insert(++x, y);
         }
-        else if(c == 'D')
+        if(op[0] == 'D')
         {
             scanf("%d", &x);
             sp.del(++x);
         }
-        else if(c == 'R')
+        if(op[0] == 'R')
         {
             scanf("%d %d", &x, &y);
             sp.replace(++x, y);
         }
-        else if(c == 'Q')
+        if(op[0] == 'Q')
         {
             scanf("%d %d", &x, &y);
             sp.select(++x - 1, sp.null);
@@ -220,24 +220,21 @@ int main()
             printf("%d\n", sp.root -> ch[1] -> ch[0] -> mc);
         }
     }
-    // showtime
-    return 0;
 }
 
 int main()
 {
 #ifndef ONLINE_JUDGE
-    // freopen("in.txt", "r", stdin);
-    // freopen("out.txt", "w", stdout);
+    freopen("in.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
 #endif
 
     solve();
 
 #ifndef ONLINE_JUDGE
-    // fclose(stdin);
-    // fclose(stdout);
-    system("bianma.txt");
-    system("jiema.txt");
+    fclose(stdin);
+    fclose(stdout);
+    system("out.txt");
 #endif
 
     return 0;
